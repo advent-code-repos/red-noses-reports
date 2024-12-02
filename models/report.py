@@ -10,6 +10,10 @@ class Report:
     def levels(self):
         return self._levels
 
+    @property
+    def id(self):
+        return self._id
+
     @levels.setter
     def levels(self, new_levels):
         self._levels = new_levels
