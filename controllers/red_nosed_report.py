@@ -7,15 +7,27 @@ class RedNosedReportController:
         self.logger = logger
         self.service = RedNosedReportService(logger)
         self.file_service = FileService(logger)
+        self._reports = None
 
     def read(self, path):
         self.logger.info(f"Read input starts with {path} path")
         self.logger.debug(f"Params path: {path}")
         try:
-            reports = self.file_service.read(path)
-            self.logger.debug(f"Reports: {reports}")
+            self._reports = self.file_service.read(path)
+            self.logger.debug(f"Reports: {self._reports}")
         except Exception as e:
             self.logger.error(f"We have an Exception: {e}")
             raise
-            self.logger.info(f"Read input ends with {path} path")
-        return reports
+        return self._reports
+
+    def safe(self, reports):
+        self.logger.info(f"Safe input starts with {reports} input")
+        try:
+            self.logger.debug(f"Reports: {self._reports}")
+            safe = 0
+
+        except Exception as e:
+            self.logger.error(f"We have an Exception: {e}")
+            raise
+
+        return safe
