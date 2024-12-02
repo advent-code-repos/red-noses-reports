@@ -1,7 +1,7 @@
 from configs.logger import logger
 from controllers.factories import create_red_nosed_report
 
-INPUT_PATH = "inputs/input.example"
+INPUT_PATH = "inputs/input"
 
 
 def main():
@@ -13,7 +13,10 @@ def main():
         f"{red_nosed_report}"
     )
 
-    report_safe = red_nosed_report.read(INPUT_PATH)
+    reports = red_nosed_report.read(INPUT_PATH)
+    logger.debug(f"Reports are: {reports}")
+    report_safe = red_nosed_report.safe(reports)
+    logger.debug(f"Report safe is: {report_safe}")
     report_safe_hard = 0
 
     logger.info(

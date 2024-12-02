@@ -24,7 +24,8 @@ class RedNosedReportController:
         self.logger.info(f"Safe input starts with {reports} input")
         try:
             self.logger.debug(f"Reports: {self._reports}")
-            safe = 0
+            safe = self.service.count_safe_level(reports)
+            self.logger.debug(f"How many safe level?: {self.safe}")
 
         except Exception as e:
             self.logger.error(f"We have an Exception: {e}")
