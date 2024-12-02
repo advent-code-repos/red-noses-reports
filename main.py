@@ -20,9 +20,7 @@ def main():
         "========================= SOLUTIONs =========================="
     )
     logger.info(f"Report safe value: {report_safe}")
-    logger.info(
-        f"Report safe (hard): {report_safe_hard}"
-    )
+    logger.info(f"Report safe (hard): {report_safe_hard}")
     logger.info(
         "=============================================================="
     )
