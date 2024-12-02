@@ -47,7 +47,11 @@
 
 ## 📍 Overview
 
-<code>❯ REPLACE-ME</code>
+This script analyzes reactor safety reports based on specific rules to determine which reports are safe. A report is considered safe if:
+
+- All levels are either increasing or decreasing, with differences between adjacent levels between 1 and 3.
+- If not inherently safe, the report can be made safe by removing one element.
+
 
 ---
 
