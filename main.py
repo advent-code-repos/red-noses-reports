@@ -17,13 +17,14 @@ def main():
     logger.debug(f"Reports are: {reports}")
     report_safe = red_nosed_report.safe(reports)
     logger.debug(f"Report safe is: {report_safe}")
-    report_safe_hard = 0
+    report_safe_dampener = red_nosed_report.dampener(reports)
+    logger.debug(f"Report Dampener safe is: {report_safe_dampener}")
 
     logger.info(
         "========================= SOLUTIONs =========================="
     )
     logger.info(f"Report safe value: {report_safe}")
-    logger.info(f"Report safe (hard): {report_safe_hard}")
+    logger.info(f"Report safe (Dampener): {report_safe_dampener}")
     logger.info(
         "=============================================================="
     )

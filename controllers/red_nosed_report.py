@@ -32,3 +32,16 @@ class RedNosedReportController:
             raise
 
         return safe
+
+    def dampener(self, reports):
+        self.logger.info(f"Dampener input starts with {reports} input")
+        try:
+            self.logger.debug(f"Reports: {self._reports}")
+            safe = self.service.count_safe_dampener(reports)
+            self.logger.debug(f"How many safe level?: {self.safe}")
+
+        except Exception as e:
+            self.logger.error(f"We have an Exception: {e}")
+            raise
+
+        return safe
